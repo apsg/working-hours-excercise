@@ -18,7 +18,7 @@
         </div>
 
         <div class="card-header" v-if="hasData()">
-            Working hours in next {{ days_selected }} {{ daysSuffix }}
+            Working hours in next {{ days_selected }} {{ daysSuffix }} (excluding today)
         </div>
 
         <div class="card-header" v-if="!hasData()">

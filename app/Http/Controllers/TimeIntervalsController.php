@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Rules\Time;
 use App\Rules\EndingTime;
+use App\Rules\FutureDate;
 use App\TimeInterval;
 use Illuminate\Http\Request;
 
@@ -47,7 +48,7 @@ class TimeIntervalsController extends Controller
 
 		$request->validate([
 			'employee_id' 	=> 'required|numeric|exists:employees,id',
-			'date'			=> 'required|date',
+			'date'			=> ['required','date', new FutureDate],
 			'starting_hour' => ['required', new Time],
 			'ending_hour' 	=> ['required', new Time, new EndingTime],
 		]);

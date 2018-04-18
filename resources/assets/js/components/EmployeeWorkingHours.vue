@@ -54,7 +54,7 @@
 
         data(){
             return {
-                today: moment().format('YYYY-MM-DD'),
+                today: moment().add(1,'days').format('YYYY-MM-DD'),
                 selectedDate: null,
                 selectedEmployee: null,
                 startingHour: {

@@ -47462,7 +47462,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
-            today: moment().format('YYYY-MM-DD'),
+            today: moment().add(1, 'days').format('YYYY-MM-DD'),
             selectedDate: null,
             selectedEmployee: null,
             startingHour: {
@@ -49189,7 +49189,7 @@ var render = function() {
               _vm._s(_vm.days_selected) +
               " " +
               _vm._s(_vm.daysSuffix) +
-              "\n    "
+              " (excluding today)\n    "
           )
         ])
       : _vm._e(),
