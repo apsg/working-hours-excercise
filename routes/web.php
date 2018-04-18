@@ -12,11 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/check-hours');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('employees', 'EmployeesController@hoursForm');
+Route::view('check-hours', 'check_hours');
 
-Route::post('time-intervals', 'TimeIntervalsController@store');
+Route::get('check-hours/{days}', 'TimeIntervalsController@index')
+	->where('days', '[0-9]+');
+Route::post('time-intervals', 'TimeIntervalsController@storeOrUpdate');
