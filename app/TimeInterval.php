@@ -90,7 +90,7 @@ class TimeInterval extends Model
 					unset($array[$i]);
 					unset($array[$j]);
 
-					$array = array_merge($array, [$combined]);
+					$array = array_merge([$combined], $array);
 
 					return static::reduce($array);
 				}
