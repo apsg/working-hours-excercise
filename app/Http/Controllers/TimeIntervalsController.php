@@ -19,8 +19,8 @@ class TimeIntervalsController extends Controller
 	 */
 	public function index($days){
 
-		$startingDate = Carbon::now();
-		$endingDate = Carbon::now()->addDays($days);
+		$startingDate = Carbon::now()->addDays(1)->format('Y-m-d');
+		$endingDate = Carbon::now()->addDays($days)->format('Y-m-d');
 
 		$intervals = TimeInterval::where('date', '>=', $startingDate)
 			->where('date', '<=', $endingDate)
