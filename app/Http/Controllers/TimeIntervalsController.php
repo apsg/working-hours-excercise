@@ -34,7 +34,8 @@ class TimeIntervalsController extends Controller
 				'ending_hour'	=> $request->ending_hour,
 			]);
 
-			return response()->json("Hours updated", 200);
+			return response()
+				->json("Employee's working hours updated", 200);
 		}else{
 			TimeInterval::create([
 				'employee_id'	=> $request->employee_id,
@@ -43,7 +44,8 @@ class TimeIntervalsController extends Controller
 				'ending_hour'	=> $request->ending_hour,
 			]);
 
-			return response()->json("Hours created", 200);
+			return response()
+				->json("Employee's working hours created", 200);
 		}
 
 	}

@@ -9,7 +9,7 @@
                 <div class="card-header">Working hours</div>
 
                 <div class="card-body">
-                   	<p>Add or update employee's working hours</p>
+                   	<p>Add or update employee's working hours. If there's already a record for selected employee and date, it will be updated. New record will be created otherwise.</p>
 					
 					<employee-working-hours 
 						:employees="{{ json_encode($employees) }}"
