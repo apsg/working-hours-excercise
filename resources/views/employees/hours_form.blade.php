@@ -11,7 +11,9 @@
                 <div class="card-body">
                    	<p>Add or update employee's working hours</p>
 					
-					<employee-working-hours :employees="{{ json_encode($employees) }}"></employee-working-hours>
+					<employee-working-hours 
+						:employees="{{ json_encode($employees) }}"
+						@saved="onSaved"></employee-working-hours>
 
                </div>
            </div>
