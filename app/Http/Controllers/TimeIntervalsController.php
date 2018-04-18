@@ -38,7 +38,8 @@ class TimeIntervalsController extends Controller
 	}
 
 	/**
-	 * [store description]
+	 * Tworzy nowe godziny pracy dla podanego pracownika lub
+	 * aktualizuje istniejące godziny pracy.
 	 * @param  Request $request [description]
 	 * @return [type]           [description]
 	 */

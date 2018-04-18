@@ -26,7 +26,9 @@ class TimeInterval extends Model
 	// ------------ STATIC MEHTODS ----------------------------
 	
 	/**
-	 * Sprawdza, czy dwa przedziały czasowe się zazębiają
+	 * Sprawdza, czy dwa przedziały czasowe się zazębiają. 
+	 * Jeśli tak, zwraca nowy przedział będący połączeniem
+	 * zazębiających się przedziałów.
 	 * @param  TimeInterval $time1 [description]
 	 * @param  TimeInterval $time2 [description]
 	 * @return [type]              [description]
@@ -70,11 +72,11 @@ class TimeInterval extends Model
 	}
 
 	/**
-	 * Redukuje tablicę przedziałów czasowych.
-	 * Sprawdza czy którekolwiek przedziały się zazębiają, jeśli 
-	 * tak - zwraca zredukowaną tablicę.
-	 * @param  [type] $array [description]
-	 * @return [type]        [description]
+	 * Redukuje rekurencyjnie tablicę przedziałów czasowych.
+	 * Sprawdza czy którekolwiek przedziały się zazębiają, 
+	 * jeśli tak - zwraca zredukowaną tablicę.
+	 * @param  [type] $array Tablica przedziałów
+	 * @return [type]        Zredukowana tablica
 	 */
 	public static function reduce($array){
 

@@ -18,11 +18,11 @@
         </div>
 
         <div class="card-header" v-if="hasData()">
-            Working hours in next {{ days_selected }} {{ daysName }}
+            Working hours in next {{ days_selected }} {{ daysSuffix }}
         </div>
 
         <div class="card-header" v-if="!hasData()">
-            No working hours to show in next {{ days_selected }} {{ daysName }}
+            No working hours to show in next {{ days_selected }} {{ daysSuffix }}
         </div>
 
         <div class="d-flex days flex-wrap">
@@ -74,7 +74,7 @@
         },
 
         computed: {
-            daysName(){
+            daysSuffix(){
                 return this.days_selected == 1 ? 'day' : 'days';
             }
         },

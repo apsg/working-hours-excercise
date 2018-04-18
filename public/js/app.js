@@ -49070,7 +49070,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     computed: {
-        daysName: function daysName() {
+        daysSuffix: function daysSuffix() {
             return this.days_selected == 1 ? 'day' : 'days';
         }
     },
@@ -49188,7 +49188,7 @@ var render = function() {
             "\n        Working hours in next " +
               _vm._s(_vm.days_selected) +
               " " +
-              _vm._s(_vm.daysName) +
+              _vm._s(_vm.daysSuffix) +
               "\n    "
           )
         ])
@@ -49200,7 +49200,7 @@ var render = function() {
             "\n        No working hours to show in next " +
               _vm._s(_vm.days_selected) +
               " " +
-              _vm._s(_vm.daysName) +
+              _vm._s(_vm.daysSuffix) +
               "\n    "
           )
         ])
