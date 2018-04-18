@@ -19,7 +19,21 @@ You need the composer for this step. If you don't have it, [grab it](http://getc
 composer install
 ```
 
-###### 3. Run the project and have fun
+###### 3. Create new .env file
+
+Create a new `.env` file:
+
+```
+printf "APP_ENV=local \nAPP_KEY=" > '.env'
+```
+
+and then generate new keys:
+
+```
+php artisan key:generate
+```
+
+###### 4. Run the project and have fun
 
 Serve the project:
 
