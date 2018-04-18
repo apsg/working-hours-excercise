@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('employees', 'EmployeesController@hoursForm');
+
+Route::post('time-intervals', 'TimeIntervalsController@store');
