@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Rules\Time;
 use App\Rules\EndingTime;
 use App\TimeInterval;
@@ -11,11 +12,37 @@ class TimeIntervalsController extends Controller
 {
     
 	/**
+	 * Zwraca godziny pracy w najbliższych N dniach
+	 * @param  integer $days    [description]
+	 * @param  Request $request [description]
+	 * @return [type]           [description]
+	 */
+	public function index($days){
+
+		$startingDate = Carbon::now();
+		$endingDate = Carbon::now()->addDays($days);
+
+		$intervals = TimeInterval::where('date', '>=', $startingDate)
+			->where('date', '<=', $endingDate)
+			->orderBy('date')
+			->orderBy('starting_hour')
+			->get()
+			->groupBy('date')
+			->all();
+
+		foreach ($intervals as $key => $group) {
+			$intervals[$key] = TimeInterval::reduce($group->all());
+		}
+
+		return $intervals;
+	}
+
+	/**
 	 * [store description]
 	 * @param  Request $request [description]
 	 * @return [type]           [description]
 	 */
-	public function store(Request $request){
+	public function storeOrUpdate(Request $request){
 
 		$request->validate([
 			'employee_id' 	=> 'required|numeric|exists:employees,id',

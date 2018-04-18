@@ -17,6 +17,7 @@ window.Vue = require('vue');
 
 Vue.component('alerts', require('./components/Alerts.vue'));
 Vue.component('employee-working-hours', require('./components/EmployeeWorkingHours.vue'));
+Vue.component('show-hours', require('./components/ShowHours.vue'));
 
 const app = new Vue({
     el: '#app',
@@ -27,7 +28,7 @@ const app = new Vue({
     },
 
     methods: {
-    	
+
     	showMessage(type, message){
     		this.$refs.alerts.addAlert(type, message);
     	},
