@@ -23,7 +23,7 @@ class TimeInterval extends Model
 		return $this->belongsTo(\App\Employee::class);
 	}
 
-	// ------------ STATIC MEHTODS ----------------------------
+	// ------------ STATIC METHODS ----------------------------
 	
 	/**
 	 * Sprawdza, czy dwa przedziały czasowe się zazębiają. 
