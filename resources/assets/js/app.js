@@ -15,8 +15,26 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('alerts', require('./components/Alerts.vue'));
+Vue.component('employee-working-hours', require('./components/EmployeeWorkingHours.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+
+    data: {
+    	is_alert_visible: false,
+
+    },
+
+    methods: {
+    	
+    	showMessage(type, message){
+    		this.$refs.alerts.addAlert(type, message);
+    	},
+
+    	onSaved(data){
+    		this.showMessage('success', data);
+    	}
+    }
+
 });
