@@ -25,14 +25,13 @@ class EndingTime implements Rule
      */
     public function passes($attribute, $value)
     {
-        $startingHour = explode(":", request()->starting_hour);
-        $endingHour = explode(":", $value);
 
-        if($endingHour[0] > $startingHour[0])
-            return true;
+        $result = \App\Helpers\Time::compare(
+            request()->starting_hour,
+            $value
+        );
 
-        if($endingHour[0] == $startingHour[0] 
-            && $endingHour[1] > $startingHour[1] )
+        if($result == -1)
             return true;
 
         return false;
